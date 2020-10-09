@@ -7,7 +7,10 @@ read -p "Enter a number" b
 read -p "Enter a number" c
 echo "1st Number=$a, 2nd Number=$b, 3rd Number=$c"
 
-#Calculating EXpression 1 (a%b+c)
+#Calculating  Expressions 1.$a+$b*$c 2.$a*$b+$c 3.$c+$a/$b 4.$a%$b+$c)
 
-result=$(($a%$b+$c))
-echo $result
+result1=$(($a+$b*$c))
+result2=$(($a*$b+$c))
+result3=$(($c+$a/$b))
+result4=$(($a%$b+$c))
+echo $result1 $result2 $result3 $result4
