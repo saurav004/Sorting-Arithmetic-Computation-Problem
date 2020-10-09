@@ -20,28 +20,30 @@ DICT[4]=$(($a%$b+$c))
 echo "DICTIONARY:" ${DICT[@]}
 
 #TO COPY DATA FROM DICTIONARY TO ARRAY
+
 for((i=1;i<=${#DICT[@]}; i++))
 do
 	Array[$i]=$((DICT[$i]))
 done
+
 echo "ARRAY:"${Array[@]}
 
 #TO SORT IN ASCENDING ORDER
 function sorting()
 {
-        for ((i=1; i<=${#Array[@]}; i++))
-                do
-                        for ((j=$i; j<=${#Array[@]}; j++))
-                        do
-                                if [ ${Array[i]} -gt ${Array[j]} ]
-                                then
-                                temp=${Array[i]}
-                                Array[$i]=${Array[j]}
-                                Array[$j]=$temp
-                                fi
-                        done
-                done
-        echo "Sorted Array"${Array[@]}
+	for ((i=1; i<=${#Array[@]}; i++))
+		do
+			for ((j=$i; j<=${#Array[@]}; j++))
+			do
+				if [ ${Array[i]} -gt ${Array[j]} ]
+				then
+					temp=${Array[i]}
+					Array[$i]=${Array[j]}
+					Array[$j]=$temp
+				fi
+			done
+		done
+	echo "Sorted Array"${Array[@]}
 }
 #FUNCTION CALL
 sorting
