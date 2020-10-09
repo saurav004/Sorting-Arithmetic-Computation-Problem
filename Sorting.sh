@@ -25,3 +25,23 @@ do
 	Array[$i]=$((DICT[$i]))
 done
 echo "ARRAY:"${Array[@]}
+
+#TO SORT IN DESCENDING ORDER
+function sorting()
+{
+        for ((i=1; i<=${#Array[@]}; i++))
+                do
+                        for ((j=$i; j<=${#Array[@]}; j++))
+                        do
+                                if [ ${Array[i]} -lt ${Array[j]} ]
+                                then
+                                temp=${Array[i]}
+                                Array[$i]=${Array[j]}
+                                Array[$j]=$temp
+                                fi
+                        done
+                done
+        echo "Sorted Array"${Array[@]}
+}
+#FUNCTION CALL
+sorting
