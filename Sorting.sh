@@ -26,14 +26,14 @@ do
 done
 echo "ARRAY:"${Array[@]}
 
-#TO SORT IN DESCENDING ORDER
+#TO SORT IN ASCENDING ORDER
 function sorting()
 {
         for ((i=1; i<=${#Array[@]}; i++))
                 do
                         for ((j=$i; j<=${#Array[@]}; j++))
                         do
-                                if [ ${Array[i]} -lt ${Array[j]} ]
+                                if [ ${Array[i]} -gt ${Array[j]} ]
                                 then
                                 temp=${Array[i]}
                                 Array[$i]=${Array[j]}
